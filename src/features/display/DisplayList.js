@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Col, Row } from 'reactstrap';
-//import DisplayCard from './DisplayCard';
+// import DisplayCard from './DisplayCard';
 import AnimatedDisplayCard from './AnimatedDisplayCard';
 import { selectFeaturedCampsite } from '../campsites/campsitesSlice';
 import { selectFeaturedPromotion } from '../promotions/promotionsSlice';
@@ -13,7 +13,7 @@ const DisplayList = () => {
         selectFeaturedPartner(state)
     ]);
 
-console.log('display items:', items);
+    console.log('display items:', items);
 
     return (
         <Row>

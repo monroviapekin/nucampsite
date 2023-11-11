@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Col } from 'reactstrap';
-// import Comment from './Comment';
-import AnimatedComment from './AnimatedComment';
+import Comment from './Comment';
 import CommentForm from './CommentForm';
 import { selectCommentsByCampsiteId } from './commentsSlice';
 
@@ -12,14 +11,8 @@ const CommentsList = ({ campsiteId }) => {
         return (
             <Col md='5' className='m-1'>
                 <h4>Comments</h4>
-                {comments.map((comment, idx) => {
-                    return (
-                        <AnimatedComment
-                            key={comment.id}
-                            comment={comment}
-                            idx={idx}
-                        />
-                    );
+                {comments.map((comment) => {
+                    return <Comment key={comment.id} comment={comment} />;
                 })}
                 <CommentForm campsiteId={campsiteId} />
             </Col>
@@ -33,4 +26,3 @@ const CommentsList = ({ campsiteId }) => {
 };
 
 export default CommentsList;
-

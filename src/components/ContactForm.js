@@ -18,7 +18,7 @@ const ContactForm = () => {
                 email: '',
                 agree: false,
                 contactType: 'By Phone',
-                feedback: '',
+                feedback: ''
             }}
             onSubmit={handleSubmit}
             validate={validateContactForm}

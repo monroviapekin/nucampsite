@@ -1,14 +1,18 @@
+import { useEffect } from 'react';
+import { useDispatch     } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import ContactPage from './pages/ContactPage';
-import HomePage from './pages/HomePage';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
-import CampsiteDetailPage from './pages/CampsiteDetailPage';
-import AboutPage from './pages/AboutPage';
+import { Footer, Header } from './components';
+import { AboutPage, CampsiteDetailPage, CampsitesDirectoryPage, ContactPage, HomePage } from './pages';
+import { fetchCampsites } from './features/campsites/campsitesSlice';
 import './App.css';
 
 function App() {
+   const dispatch = useDispatch();
+   
+   useEffect(() => {
+    dispatch(fetchCampsites());
+   }, [dispatch]);
+
     return (
         <div className='App'>
             <Header />
@@ -28,6 +32,3 @@ function App() {
 }
 
 export default App;
-
-
-//I am sending this to github.
